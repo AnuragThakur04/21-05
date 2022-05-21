@@ -1,0 +1,44 @@
+.gallery {
+    margin-top: 70px;
+}
+
+.galleryContent {
+    max-width: 70%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 0 30px;
+}
+.galleryleft{
+    flex: 0.5px;
+}
+
+.galleryleft h1 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.galleryleft p {
+    max-width: 80%;
+    margin-top: 20px;
+}
+
+.galleryleft button {
+    padding: 15px 40px;
+    background-color: #003CAC;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+
+.galleryright{
+    flex: 0.5px;
+}
+.galleryright img {
+    /* height: 60%; */
+    width: 100%;
+    object-fit: contain;
+}

@@ -1,0 +1,57 @@
+.book{
+    margin-top: 50px;
+}
+.bookcontent{
+    max-width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    background-color: #F7F5F2;
+    padding: 20px 10px;
+}
+
+.centerContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left h1{
+    font-weight: 500;
+    font-size: 25px;
+    max-width: 70%;
+}
+.center{
+    position: relative;
+    flex: 1px;
+    max-width: 40%;
+    margin: auto;
+}
+.center::before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 0;
+    right: 0;
+    background-color: black;
+    bottom: -6px;
+}
+.centerContent h2{
+    font-size: 22px;
+    font-weight: 500;
+    color: #003CAC;
+}
+.centerContent input{
+    border: none;
+    background: none;
+    font-size: 18px;
+    outline-width: 0px;
+}
+.right button{
+    padding: 15px 60px;
+    border-radius: 30px;
+    background-color: #003CAC;
+    color: white;
+    font-size: 20px;
+    border: none;
+}

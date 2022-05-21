@@ -1,0 +1,144 @@
+.navbar {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding-top: 5px;
+  height: 200px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.container-fluid {
+  padding-left: 0 !important;
+}
+.navbar {
+  height: 200px;
+  background-color: #f2f7df !important;
+}
+.navbar-nav > p:hover {
+  transform: scale(1.1);
+}
+
+.header-right {
+  display: flex;
+  flex: 0.5 !important;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navbar-brand {
+  display: flex;
+  flex: 0.5;
+  width: auto;
+  height: 200px;
+  object-fit: contain;
+  padding: 0 15px;
+  background: url("../Assets/header.JPG") no-repeat;
+}
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+.header-left > img {
+  height: 180px;
+}
+.header_center {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-nav p {
+  color: black;
+  font-size: large;
+  font-weight: 600;
+  margin-right: 1.2rem;
+}
+.navbar-nav button {
+  padding: 8px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #111;
+  margin-top: -10px;
+  text-transform: uppercase;
+}
+
+.navbar-nav button:hover {
+  background-color: #75bf47;
+  color: white;
+  border: none;
+}
+@media only screen and (max-width: 700px) {
+  .header {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding-top: 5px;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .container-fluid {
+    padding-left: 0 !important;
+  }
+  .navbar {
+    height: 100px;
+    background-color: #f2f7df !important;
+  }
+  .header-right {
+    display: flex;
+    flex: 0.5 !important;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .navbar-brand {
+    display: flex;
+    flex: 1;
+    width: 100px;
+    object-fit: fill;
+    padding: 0 15px;
+    background: url("../Assets/mobileHeader.png") no-repeat cover !important;
+  }
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+  .header-left > img {
+    height: 180px;
+  }
+  .header_center {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-nav p {
+    color: black;
+    font-size: medium;
+    font-weight: 600;
+    margin-right: 2rem;
+  }
+  .navbar-nav button {
+    padding: 8px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #111;
+    margin-right: 20px;
+  }
+
+  .navbar-nav button:hover {
+    background-color: #75bf47;
+    color: white;
+    border-color: #75bf47;
+  }
+}

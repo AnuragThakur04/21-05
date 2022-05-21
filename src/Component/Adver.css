@@ -1,0 +1,28 @@
+.adver{
+
+    background-color: #F2F7DF;    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.adver h1, .adver p{
+    text-align: center;
+}
+
+
+.adver button{
+    padding: 8px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #111;
+    margin-right: 20px;
+    transition: 0.5s;
+}
+.adver button:hover {
+    background-color: #75bf47;
+    color: white;
+    border-color:#75bf47 ;
+  }

@@ -1,0 +1,30 @@
+.frame {
+    
+  background-color: #F2F7DF;
+}
+.frame p{
+    text-align: center;
+    font-size: 25px;
+    padding-top: 20px;
+}
+.frame >.aboutUs{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.frame_about{
+    display:flex;
+    flex-direction: column;
+}
+.frame_viewMore{
+    align-self: flex-end !important;            
+    text-decoration: none !important;
+}
+.frame_viewMore>h4{
+    width:fit-content !important; 
+    font-size:18px;
+}

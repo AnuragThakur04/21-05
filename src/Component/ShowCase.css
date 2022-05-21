@@ -1,0 +1,30 @@
+.showcase {
+    margin-top: 50px;
+}
+
+.showcaseContent {
+    max-width: 70%;
+    margin: auto;
+    background-color: #F7F5F2;
+    padding: 80px 20px;
+}
+
+.showcaseContent h1{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.showcaseContent img {
+    height: 250px;
+    width: 300px;
+    object-fit: contain;
+}

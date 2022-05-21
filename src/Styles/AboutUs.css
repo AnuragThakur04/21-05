@@ -1,0 +1,8 @@
+.accordion-body {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.AboutUs {
+  /* background-color: #f2f7df; */
+  height: 100vh;
+}

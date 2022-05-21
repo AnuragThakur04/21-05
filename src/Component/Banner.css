@@ -1,0 +1,105 @@
+.bannerImage {
+  object-fit:contain;
+}
+.carousel{
+  background-color: #F2F7DF;
+}
+.carousel-item >img{
+  height:100vh;
+  width:90vw;
+  object-fit:contain;
+}
+.st1 {
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../Assets/image_1.jpg");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-position: center;
+}
+.st2 {
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../Assets/image_2.jpg");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-position: center;
+}
+.st3 {
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../Assets/image_3.jpg");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-position: center;
+}
+.st4 {
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../Assets/image_4.jpg");
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-position: center;
+}
+.st1 h1,
+.st2 h1,
+.st3 h1,
+.st4 h1 {
+  top: 42vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+  width: 40%;
+  color: white;
+  font-weight: 500;
+  font-family: serif;
+  font-size: 4rem;
+}
+.parallax_content {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 67%;
+  left: 30%;
+  z-index: 8;
+}
+.parallax_content > h1 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 500;
+  font-family: serif;
+}
+.parallax_content > button {
+  padding: 10px 40px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+  border-color: #00c853;
+  font-size: 19px;
+  margin-top: 20px;
+}
+.parallax_content > button:hover {
+  border: none;
+  background-color: #00c853;
+  color: #111;
+}
+.parallax_content > a > img {
+  margin-top: 30px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 100%;
+  background-color: rgba(249, 249, 249, 0.5);
+  animation: animateDown infinite 1.5s;
+}
+.parallax_content > a > img:hover {
+  background-color: #00c853;
+}

@@ -1,0 +1,90 @@
+.service {
+  background: #e6e5e6;
+  padding-bottom: 2rem;
+}
+.story_upper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  background: #e6e5e6;
+}
+.story_heading > h1 {
+  font-size: 21px;
+  letter-spacing: 3.5px;
+  padding-top: 20px;
+}
+.story_lower {
+  display: flex;
+}
+.story_lowerUpper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 100px;
+}
+.story_lowerUpperLeft {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.story_lowerUpperLeft > h3 {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.story_lowerUpperRight {
+  display: flex;
+  align-items: center;
+}
+.cardSection {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px 0px 0px;
+  background: #e6e5e6;
+}
+.serviceCard {
+  display: flex;
+  width: 30%;
+  margin-left: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.card {
+  box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.75);
+  padding: 10px;
+}
+.card > h5 {
+  font-weight: 900;
+  text-transform: capitalize;
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+.card > button {
+  display: flex;
+  padding: 8px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #111;
+  margin-right: 20px;
+  align-self: center;
+  margin: 10px 0 10px 0;
+  text-transform: uppercase;
+}
+.card > button:hover {
+  background-color: #75bf47;
+  color: white;
+  /* border: none; */
+  text-transform: uppercase;
+}
