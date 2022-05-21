@@ -3,10 +3,13 @@
       rgba(114, 212, 116, 0.5),
       rgba(114, 212, 116, 0.5)
     ),
-    url("./Assets/background.jpg");
-  height: 76vh;
+    /* url("./Assets/background.jpg"); */
+    url("https://images.unsplash.com/photo-1628348070889-cb656235b4eb?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170");
+  height: 78vh;
   background-repeat: no-repeat;
-  object-fit: cover;
+  background-attachment: fixed;
+  background-size:cover;
+  object-fit: fill;
   display: flex;
   align-items: center;
   justify-content: center;

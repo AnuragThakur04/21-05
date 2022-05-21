@@ -39,8 +39,6 @@ const Services = () => {
                   <img
                     src={item.image}
                     alt="back"
-                    height="200px"
-                    width="100%"
                   />
                   <h5>{item.heading}</h5>
                   <h4>About?</h4>

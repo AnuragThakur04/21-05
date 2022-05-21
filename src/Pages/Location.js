@@ -16,7 +16,7 @@ function Location() {
               problems or any diseases, an get your diseases cured with no side
               effects.
             </p>
-            <button>Find Location</button>
+            {/* <button>Find Location</button> */}
           </div>
           <div className="right">
             {/* <img

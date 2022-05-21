@@ -4,6 +4,7 @@ import "./BookAppointment.css";
 import { db } from "./firebase";
 import firebase from "firebase";
 import Header from "./Component/Header";
+import { FamilyRestroomRounded } from "@mui/icons-material";
 
 const dataClass = {
   firstname: "",
@@ -14,14 +15,10 @@ const dataClass = {
 };
 function BookAppointment() {
   const [data, setData] = useState(dataClass);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState();
+  const [success, setSuccess] = useState(false);
 
   const sendAppointment = (e) => {
     e.preventDefault();
-    console.log("yes");
     emailjs
       .sendForm(
         "service_jx4br1k",
@@ -30,13 +27,19 @@ function BookAppointment() {
         "ViQ0OXaS8aiGcBtLl"
       )
       .then((res) => {
-        db.collection("Bookings").add({
-          name: name,
-          email: email,
-          address: address,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-          phone: phone,
-        });
+        console.log(res, "email response");
+        db.collection("Bookings")
+          .add({
+            name: data.firstname + "\t"+data.lastname,
+            email: data.email,
+            address: data.address,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            phone: data.phone,
+          })
+          .then((res) => {
+            console.log(res, "firebase response");
+            setSuccess(true);
+          });
       })
       .catch((e) => {
         console.log(e);
@@ -58,7 +61,7 @@ function BookAppointment() {
         <form className="bookRight" onSubmit={sendAppointment}>
           <h1>Book Appointment</h1>
           <div className="rightContent">
-            <div class="nameBlock">
+            <div className="nameBlock">
               <input
                 type="text"
                 name="firstname"
