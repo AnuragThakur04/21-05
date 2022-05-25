@@ -1,34 +1,36 @@
-import * as React from 'react';
-import Paper from '@mui/material/Paper';
-import { ViewState } from '@devexpress/dx-react-scheduler';
-import {
-  Scheduler,
-  DayView,
-  Appointments,
-} from '@devexpress/dx-react-scheduler-material-ui';
+import * as React from "react";
+import Paper from "@mui/material/Paper";
+import SchedulerCalendar from "scheduler-calendar";
 
-const currentDate = '2019-06-23';
-const appointments = [
-  { title: 'Mail New Leads for Follow Up', startDate: '2019-06-23T10:00' },
-  { title: 'Product Meeting', startDate: '2019-06-23T10:30', endDate: '2019-06-23T11:30' },
-  { title: 'Send Territory Sales Breakdown', startDate: '2019-06-23T12:35' },
-];
 
 const BookingsScheduler = () => (
-  <Paper>
-    <Scheduler
-      data={appointments}
-    >
-      <ViewState
-        currentDate={currentDate}
-      />
-      <DayView
-        startDayHour={9.5}
-        endDayHour={13.5}
-      />
-      <Appointments />
-    </Scheduler>
-  </Paper>
+  <SchedulerCalendar
+    availabilities={[
+      {
+        day: "mon",
+        slots: [
+          { from: "09:00", to: "10:30" },
+          { from: "11:30", to: "13:00" },
+          { from: "14:30", to: "17:00" },
+        ],
+        comment: "Test comment",
+      },
+      {
+        day: "2021-01-26",
+        slots: [
+          { from: "09:00", to: "10:30" },
+          { from: "11:30", to: "19:00" },
+        ],
+      },
+    ]}
+    availabilityType={"infinity"}
+    duration={10}
+    dayContainerStyle='day-style'
+    isBusinessDays
+    onIntervalChange={(e) => {
+      console.log(e, "data");
+    }}
+  />
 );
 
 export default BookingsScheduler;

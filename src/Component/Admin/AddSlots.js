@@ -18,6 +18,8 @@ import {
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase";
+import BookingsScheduler from "./BookingsScheduler";
+import 'scheduler-calendar/dist/index.css'
 const dataclass = {
   start: "",
   end: "",

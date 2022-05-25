@@ -7,6 +7,7 @@ import Header from "./Component/Header";
 import { FamilyRestroomRounded } from "@mui/icons-material";
 import { Modal, TextField } from "@mui/material";
 import { Button,  Text } from "native-base";
+import BookingsScheduler from "./Component/Admin/BookingsScheduler";
 
 const dataClass = {
   firstname: "",
@@ -134,11 +135,12 @@ function BookAppointment() {
         </form>
         <Modal
           open={showTime}
+          className="time-modal"
           onClose={()=>setShowTime(false)}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-desc ription"
         >
-        <Text>Hello</Text>
+        <BookingsScheduler/>
         </Modal>
       </div>
     </div>

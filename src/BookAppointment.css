@@ -15,7 +15,11 @@
   justify-content: center;
   padding: auto;
 }
-
+.time-modal{
+  background-color: #fff;
+  margin:5rem;
+  overflow: scroll;
+}
 .bookLeft {
   color: white;
   display: flex;
