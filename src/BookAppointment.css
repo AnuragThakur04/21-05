@@ -39,10 +39,12 @@
 }
 
 .bookRight {
+  display: flex;
   background-color: white;
   overflow-x: hidden;
   padding: 10px 20px;
   margin-left: 50px;
+  flex-direction: column;
 }
 
 .bookRight h1 {
@@ -51,15 +53,6 @@
 }
 .rightContent {
   flex-direction: column;
-}
-
-.rightContent input {
-  width: 100%;
-  background: none;
-  outline-width: 0px;
-  margin-top: 10px;
-  padding: 5px;
-  border-radius: 5px;
 }
 
 .rightContent button {
@@ -80,6 +73,9 @@
   display: flex;
   justify-content: space-between;
 }
-.nameBlock > input {
-  flex: 0.49;
+.name-input{
+  width:48%;
+}
+.input-field{
+  margin-top:10px !important;
 }

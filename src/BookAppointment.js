@@ -5,6 +5,8 @@ import { db } from "./firebase";
 import firebase from "firebase";
 import Header from "./Component/Header";
 import { FamilyRestroomRounded } from "@mui/icons-material";
+import { Modal, TextField } from "@mui/material";
+import { Button,  Text } from "native-base";
 
 const dataClass = {
   firstname: "",
@@ -16,7 +18,9 @@ const dataClass = {
 function BookAppointment() {
   const [data, setData] = useState(dataClass);
   const [success, setSuccess] = useState(false);
+  const [showTime, setShowTime] = useState(false);
 
+  console.log(showTime,'shoe time')
   const sendAppointment = (e) => {
     e.preventDefault();
     emailjs
@@ -30,7 +34,7 @@ function BookAppointment() {
         console.log(res, "email response");
         db.collection("Bookings")
           .add({
-            name: data.firstname + "\t"+data.lastname,
+            name: data.firstname + "\t" + data.lastname,
             email: data.email,
             address: data.address,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -59,82 +63,83 @@ function BookAppointment() {
           <h2>For Help Call: +61 their Number</h2>
         </div>
         <form className="bookRight" onSubmit={sendAppointment}>
-          <h1>Book Appointment</h1>
-          <div className="rightContent">
-            <div className="nameBlock">
-              <input
-                type="text"
-                name="firstname"
-                placeholder="First Name"
-                required
-                onChange={(e) => {
-                  setData({ ...data, firstname: e.target.value });
-                }}
-              />
-              <input
-                type="text"
-                name="lastname"
-                required
-                placeholder="Last Name"
-                onChange={(e) => {
-                  setData({ ...data, lastname: e.target.value });
-                }}
-              />
-            </div>
-            <div>
-              <input
-                onChange={(e) => {
-                  setData({ ...data, phone: e.target.value });
-                }}
-                type="number"
-                required
-                name="phone"
-                placeholder="Contact Number"
-              />
-            </div>
-            <div>
-              <input
-                onChange={(e) => {
-                  setData({ ...data, email: e.target.value });
-                }}
-                type="email"
-                required
-                name="user_email"
-                placeholder="Email "
-              />
-            </div>
-            <div>
-              <input type="datetime-local" placeholder="Select Date" />
-            </div>
+          <Text fontSize="3xl" fontWeight="bold" my="3">
+            Book Appointment
+          </Text>
 
-            <div className="address">
-              <p>Address Detail</p>
-              <div style={{ display: "flex" }}>
-                <input
-                  onChange={(e) => {
-                    setData({ ...data, address: e.target.value });
-                  }}
-                  type="text"
-                  placeholder="Entter Address"
-                />
-                <input
-                  style={{ marginLeft: "10px" }}
-                  type="text"
-                  placeholder="Enter City"
-                />
-              </div>
-              <div style={{ display: "flex" }}>
-                <input type="text" placeholder="Enter Area" />
-                <input
-                  style={{ marginLeft: "10px" }}
-                  type="text"
-                  placeholder="Enter Postal code"
-                />
-              </div>
-            </div>
-            <button>book an appointment</button>
+          <div className="nameBlock">
+            <TextField
+              className="name-input"
+              label="First Name"
+              type="text"
+              variant="outlined"
+              required
+              onChange={(e) => {
+                setData({ ...data, firstname: e.target.value });
+              }}
+            />
+            <TextField
+              variant="outlined"
+              className="name-input"
+              required
+              type="text"
+              label="Last Name"
+              onChange={(e) => {
+                setData({ ...data, lastname: e.target.value });
+              }}
+            />
           </div>
+          <TextField
+            variant="outlined"
+            required
+            className="input-field"
+            type="text"
+            label="Contact Number"
+            onChange={(e) => {
+              setData({ ...data, phone: e.target.value });
+            }}
+          />
+          <TextField
+            variant="outlined"
+            required
+            className="input-field"
+            type="email"
+            label="Email"
+            onChange={(e) => {
+              setData({ ...data, email: e.target.value });
+            }}
+          />
+          <Button
+            size="sm"
+            variant="solid"
+            my="3"
+            h="12"
+            bg="#75bf47"
+            onPress={() => setShowTime(true)}
+          >
+            <Text fontSize="lg" fontWeight="bold" color="#fff">
+              Choose Your Slot
+            </Text>
+          </Button>
+          <Button size="sm" variant="solid" h="12" bg="teal.900">
+            <Text
+              fontSize="lg"
+              fontWeight="bold"
+              color="#fff"
+              textTransform="uppercase"
+            >
+              book an appointment
+            </Text>
+          </Button>
         </form>
+        <Modal
+          open={showTime}
+          onClose={()=>setShowTime(false)}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-desc ription"
+        >
+        <Text>Hello</Text>
+        </Modal>
       </div>
     </div>
   );
