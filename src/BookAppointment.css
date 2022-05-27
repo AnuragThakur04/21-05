@@ -16,9 +16,7 @@
   padding: auto;
 }
 .time-modal{
-  background-color: #fff;
-  margin:5rem;
-  overflow: scroll;
+  padding:5rem;
 }
 .bookLeft {
   color: white;

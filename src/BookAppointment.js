@@ -8,13 +8,14 @@ import { FamilyRestroomRounded } from "@mui/icons-material";
 import { Modal, TextField } from "@mui/material";
 import { Button,  Text } from "native-base";
 import BookingsScheduler from "./Component/Admin/BookingsScheduler";
+import SelectSlots from "./Component/BookingAppointment/SelectSlots";
 
 const dataClass = {
   firstname: "",
   lastname: "",
   address: "",
   phone: "",
-  email: "",
+  user_email: "",
 };
 function BookAppointment() {
   const [data, setData] = useState(dataClass);
@@ -23,6 +24,7 @@ function BookAppointment() {
 
   console.log(showTime,'shoe time')
   const sendAppointment = (e) => {
+    console.log('clicked',e.target)
     e.preventDefault();
     emailjs
       .sendForm(
@@ -36,7 +38,7 @@ function BookAppointment() {
         db.collection("Bookings")
           .add({
             name: data.firstname + "\t" + data.lastname,
-            email: data.email,
+            email: data.user_email,
             address: data.address,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             phone: data.phone,
@@ -74,6 +76,7 @@ function BookAppointment() {
               label="First Name"
               type="text"
               variant="outlined"
+              value={data?.firstName}
               required
               onChange={(e) => {
                 setData({ ...data, firstname: e.target.value });
@@ -84,6 +87,7 @@ function BookAppointment() {
               className="name-input"
               required
               type="text"
+              value={data?.lastname}
               label="Last Name"
               onChange={(e) => {
                 setData({ ...data, lastname: e.target.value });
@@ -95,6 +99,7 @@ function BookAppointment() {
             required
             className="input-field"
             type="text"
+            value={data?.phone}
             label="Contact Number"
             onChange={(e) => {
               setData({ ...data, phone: e.target.value });
@@ -106,8 +111,10 @@ function BookAppointment() {
             className="input-field"
             type="email"
             label="Email"
+            name="user_email"
+            value={data?.user_email}
             onChange={(e) => {
-              setData({ ...data, email: e.target.value });
+              setData({ ...data, user_email: e.target.value });
             }}
           />
           <Button
@@ -122,7 +129,8 @@ function BookAppointment() {
               Choose Your Slot
             </Text>
           </Button>
-          <Button size="sm" variant="solid" h="12" bg="teal.900">
+          <input className="btn btn-primary" type='submit' value="BOOK AN APPOINTMENT"/>
+          {/* <Button size="sm" variant="solid" h="12" bg="teal.900">
             <Text
               fontSize="lg"
               fontWeight="bold"
@@ -131,16 +139,14 @@ function BookAppointment() {
             >
               book an appointment
             </Text>
-          </Button>
+          </Button> */}
         </form>
         <Modal
           open={showTime}
           className="time-modal"
           onClose={()=>setShowTime(false)}
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-desc ription"
         >
-        <BookingsScheduler/>
+        <SelectSlots/>
         </Modal>
       </div>
     </div>

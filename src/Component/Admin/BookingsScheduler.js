@@ -1,36 +1,17 @@
-import * as React from "react";
-import Paper from "@mui/material/Paper";
-import SchedulerCalendar from "scheduler-calendar";
+import { Center } from "native-base";
+import React from "react";
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+const BookingsScheduler = () => {
+  const [value, onChange] = useState(new Date());
 
-
-const BookingsScheduler = () => (
-  <SchedulerCalendar
-    availabilities={[
-      {
-        day: "mon",
-        slots: [
-          { from: "09:00", to: "10:30" },
-          { from: "11:30", to: "13:00" },
-          { from: "14:30", to: "17:00" },
-        ],
-        comment: "Test comment",
-      },
-      {
-        day: "2021-01-26",
-        slots: [
-          { from: "09:00", to: "10:30" },
-          { from: "11:30", to: "19:00" },
-        ],
-      },
-    ]}
-    availabilityType={"infinity"}
-    duration={10}
-    dayContainerStyle='day-style'
-    isBusinessDays
-    onIntervalChange={(e) => {
-      console.log(e, "data");
-    }}
-  />
-);
+  console.log(value, "calender Cale");
+  return (
+    <Center p="3" m='1'>
+      <Calendar onChange={onChange} value={value} />
+    </Center>
+  );
+};
 
 export default BookingsScheduler;
